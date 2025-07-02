@@ -1,12 +1,46 @@
-# React + Vite
+📰 React News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive News Application built with React.js and Bootstrap, powered by **NewsAPI.org**. This project is ideal for beginners looking to explore API integration, React component structure, and dynamic UI updates in a real-world app.
 
-Currently, two official plugins are available:
+ 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* 🔥 Built using Vite + React
+* 💅 Styled with Bootstrap (via CDN)
+* 🧱 Clean and scalable component structure
+* 📡 Fetches real-time news from NewsAPI
+* 🧭 Category-based filtering (Tech, Business, Health, Sports, etc.)
+* 🖼 Handles missing images or content with fallbacks
+* 🧪 Uses React Hooks: `useState`, `useEffect`
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📁 Project Structure
+
+📦 news-app
+├── public/
+│   └── index.html     # Bootstrap CDN added here
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx       # Top navigation with category links
+│   │   ├── NewsBoard.jsx    # Main component fetching and displaying news
+│   │   └── NewsItem.jsx     # Card UI for each news article
+│   ├── App.jsx
+│   ├── main.jsx
+├── .env                   # API key goes here (e.g., VITE_API_KEY=your_key)
+└── package.json
+```
+
+🌐 Technologies Used
+
+* React.js (Vite setup)
+* Bootstrap 5
+* JavaScript (ES6+)
+* NewsAPI.org
+
+📦 Future Enhancements
+
+* 🔍 Add search functionality
+* 🌙 Add dark/light theme toggle
+* 🗓 Filter by date or source
+* 🔄 Add pagination or "Load More" button
+
+
