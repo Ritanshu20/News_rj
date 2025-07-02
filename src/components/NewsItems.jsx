@@ -1,20 +1,26 @@
 export const NewsItems = ({ title, description, src, url }) => {
   return (
     <div
-      className="card bg-dark text-light mb-3 d-inline-block my-3 mx-3 px-2 py-2"
-      style={{ maxWidth: "250px" }} // ✅ fixed typo and small size
+      className="card bg-dark text-light"
+      style={{ width: "100%", maxWidth: "18rem", minHeight: "420px" }}
     >
       <img
-        src={src || "https://via.placeholder.com/300x180?text=No+Image"} // ✅ fallback image
+        src={src || "https://placehold.co/286x160?text=No+Image"}
         className="card-img-top"
-        alt={title}
+        alt={title || "News"}
+        style={{ height: "180px", objectFit: "cover" }}
       />
-      <div className="card-body">
-        <h5 className="card-title">{title || "No Title Available"}</h5>
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{title?.slice(0, 50) || "No Title Available"}</h5>
         <p className="card-text">
-          {description || "No description available for this article."}
+          {description?.slice(0, 90) || "No description available."}
         </p>
-        <a href={url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <a
+          href={url}
+          className="btn btn-primary mt-auto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Read more
         </a>
       </div>

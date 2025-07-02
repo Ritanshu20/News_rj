@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import { NewsItems } from "./NewsItems";
 
-export const NewsBoard = () => {
+export const NewsBoard = ({category}) => {
     const [articles ,setArticles] = useState([])
    useEffect(() => {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_API_KEY}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -19,20 +19,28 @@ export const NewsBoard = () => {
       console.error("Error fetching news:", error);
       setArticles([]); // fallback in case of fetch error
     });
-}, []);
+}, [category]);
 
   return (
-    <div>
-   
+<div className="container my-4">
+  <h2 className="text-center mb-4">
+    Latest <span className="badge bg-danger">News</span>
+  </h2>
 
+  <div className="row">
+    {articles.map((news, index) => (
+      <div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex justify-content-center" key={index}>
+        <NewsItems
+          title={news.title}
+          description={news.description}
+          src={news.urlToImage}
+          url={news.url}
+        />
+      </div>
+    ))}
+  </div>
+</div>
 
-        <h2 className = "text-center">Latest<span className="badge bg-danger     "> News</span></h2>
-
-        {articles.map((news,index)=>{
-            return <NewsItems key={index} title={news.tittle} description= { news.description} src = { news.urlToImage} url = {news.url }
-            />
-        })}
-    </div>
   )
 }
 export default NewsBoard
