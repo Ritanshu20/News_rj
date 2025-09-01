@@ -12,6 +12,7 @@ A fully responsive News Application built with React.js and Bootstrap, powered b
 * 🖼 Handles missing images or content with fallbacks
 * 🧪 Uses React Hooks: `useState`, `useEffect`
 
+Live link ;- https://news-rj.vercel.app/
 
 📁 Project Structure
 
