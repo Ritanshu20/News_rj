@@ -4,7 +4,7 @@ import { NewsItems } from "./NewsItems";
 export const NewsBoard = ({category}) => {
     const [articles ,setArticles] = useState([])
    useEffect(() => {
-  const url = `https://gnews.io/api/v4/top-headlines?country=us&category=${category}&apikey=${import.meta.env.VITE_API_KEY}`;
+  const url = `https://gnews.io/api/v4/top-headlines?country=in&category=${category}&apikey=${import.meta.env.VITE_API_KEY}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
